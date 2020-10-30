@@ -1,36 +1,62 @@
 $(document).ready(function() { 
 
-var Day = moment().format("dddd, MMMM Do"); 
-console.log(Day); 
-$("#currentDay").append(Day); 
-
-var time1 = beforeTime.add(0, "h");
+// appends current date to header
+var day = moment().format("dddd, MMMM Do"); 
+$("#currentDay").append(day); 
 
 
-var currTime = moment().format("hA"); 
+
+//gives current time in hour+AM/PM format
+var currTime = moment().format("hhA"); 
 console.log(currTime); 
 
-var startTime = moment().startOf("date")._d; 
-console.log(startTime); 
+var startTime = moment().startOf("day").add(9, "hours");
 
-newstartTime = moment(startTime).add("9", "hours"); 
+//get first hour
+var time1 =startTime.add(0, "h"); 
+time1=time1.format("hA"); 
+$(".block1").text(time1); 
+//get 2nd hour - error on the line
+var time2=startTime.add(1, "hour"); 
+time2=time2.format("hA");
+$(".block2").text(time2); 
 
-console.log(newstartTime._d); 
+var time3=startTime.add(1, "hour"); 
+time3=time3.format("hA");
+$(".block3").text(time3); 
+
+var time4=startTime.add(1, "hour"); 
+time4=time4.format("hA");
+$(".block4").text(time4); 
 
 
-// if (currTime.isBefore(".time-block")) {
-//     $(".timeblock").attr("class", "future"); 
+var time5=startTime.add(1, "hour"); 
+time5=time5.format("hA");
+$(".block5").text(time5); 
 
-// }else if (currTime.isSame(".time-block")) {
-//     $(".timeblock").attr("class", "present"); 
+var time6=startTime.add(1, "hour"); 
+time6=time6.format("hA");
+$(".block6").text(time6); 
 
-// }else (currTime.isAfter(".timeblock")) {
-//     $(".timeblock").attr("class", "past"); 
+var time7=startTime.add(1, "hour"); 
+time7=time7.format("hA");
+$(".block7").text(time7); 
 
-// }; 
+var time8=startTime.add(1, "hour"); 
+time8=time8.format("hA");
+$(".block8").text(time8); 
+
+var time9=startTime.add(1, "hour"); 
+time9=time9.format("hA");
+$(".block9").text(time9); 
 
 
 });
+
+
+
+
+
 
 
  

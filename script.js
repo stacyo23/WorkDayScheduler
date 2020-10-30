@@ -1,4 +1,4 @@
-
+$(document).ready(function() { 
 
 var Day = moment().format("dddd, MMMM Do"); 
 console.log(Day); 
@@ -18,9 +18,6 @@ newstartTime = moment(startTime).add("9", "hours");
 console.log(newstartTime._d); 
 
 
-
-
-
 // if (currTime.isBefore(".time-block")) {
 //     $(".timeblock").attr("class", "future"); 
 
@@ -31,4 +28,9 @@ console.log(newstartTime._d);
 //     $(".timeblock").attr("class", "past"); 
 
 // }; 
+
+
+});
+
+
  

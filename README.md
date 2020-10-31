@@ -11,7 +11,7 @@
 
 ### Deployed Site
 
-* https://stacyo23.github.io/WorkDayScheduler/
+* https://stacyo23.github.io/WorkDayScheduler/index
 
 ### Github Page
 

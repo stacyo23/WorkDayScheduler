@@ -7,7 +7,7 @@ $("#currentDay").append(day);
 
 
 //gives current time in hour+AM/PM format
-var currTime = moment().format("hhA"); 
+var currTime = moment().format("h A"); 
 
 var startTime = moment().startOf("day").add(9, "hours");
 
@@ -27,7 +27,6 @@ $(".block3").text(time3);
 var time4=startTime.add(1, "hour"); 
 time4=time4.format("h A");
 $(".block4").text(time4); 
-
 
 var time5=startTime.add(1, "hour"); 
 time5=time5.format("h A");
@@ -52,17 +51,35 @@ $(".block9").text(time9);
 
 function compareTime() {
 
-    
+console.log(currTime); 
+time1 = moment().startOf("day").startOf("hour").add(9, "hours");
+console.log(time1); 
+
+if (currTime.isBefore(time1)){
+    $(".form9").addClass("future")
+} else if (currTime.isSame(time1)) {
+    $(".form9").addClass("present")
+} else if (currTime.isAfter(time1)) {
+    $(".form9").addClass("past")
+}; 
+
+
+
+// JSON.parse(localStorage.getItem(hourofDay, textInput)); 
+
+
 }
+compareTime(); 
 
 $(".saveBtn").on("click", function(event) {
     event.preventDefault();
 
-    // This line grabs the input from the textbox
     var textInput = $(this).siblings(".form-control").val().trim();
     var hourofDay= $(this).parent().data("hour"); 
     
-localStorage.setItem(hourofDay, textInput); 
+    JSON.stringify(localStorage.setItem(hourofDay, textInput)); 
+
+
 
 });
 });
